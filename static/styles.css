@@ -1,0 +1,350 @@
+body {
+    background-color: #fff;
+    color: #212529;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input{
+    font-family: 'Montserrat', sans-serif;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    width: 90%;
+}
+
+.flex-adicionar{
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.imagem-header{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.input-text{
+    padding: 1em 1em;
+    width: 28%;
+    margin: 0.2em 1em;
+}
+
+.column{
+    flex-direction:column;
+    align-items: center;
+}
+
+.cliente{
+    width:15%;
+}
+
+.impressao{
+    width: 15%;
+}
+
+.descricao{
+    width: 25%;
+}
+
+.custo{
+    width: 10%;
+}
+
+.valor{
+    width: 10%;
+}
+
+.filamento{
+    width:10%;
+}
+.data{
+    width:10%;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.input-number{
+    width: 50px;
+    padding: 1em;
+}
+
+.input-editar-apagar{
+    padding: 1em 2em;
+    border-radius:45px;
+    border: none;
+}
+
+.input-editar-apagar:hover{
+    background-color: blue;
+}
+
+.input-enviar{
+    background-color: #5EADDB ;
+    padding: 1em 1em;
+    margin-top: 1em;
+    border-radius: 15px;
+    border: none;
+}
+
+.select-list{
+    border:none;
+    padding: 0.2em 0.5em;
+    background-color: #5EADDB;
+    width: 100%;
+    text-align: center;
+}
+
+.select-list option .opcao1{
+    background-color:red;
+}
+
+.jumbotron {
+    background-color: black;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+.section:hover {
+    background-color: #f5f5f5;
+    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+}
+
+.flex{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.flex-butoes{
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+    margin: 2em 0;
+}
+
+.niver-flex{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.flex-tabela-butao{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.principal{
+    background-color: black;
+    color: white;
+    justify-content: center;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.flex-header{
+    display: flex;
+    width: 82%;
+    justify-content: space-around;
+}
+
+.niver-conteudo{
+    width: 40%;
+    word-wrap: break-word;
+    text-align:center;
+}
+
+
+
+.butao{
+    transition: 1s;
+    padding: 0.2em 1em;
+    margin: 1em;
+    border: none;
+    background-color: #EB4936;
+    width: 75%;
+    border-radius: 15px;
+}
+
+.butao:hover{
+    box-shadow: 2px 2px ;
+}
+
+
+
+tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+
+
+.tabela{
+    width:95%;
+    margin: 0 auto;
+}
+
+.voltar{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 775px){
+     .niver-flex{
+         flex-direction: column;
+     }
+
+    .niver-conteudo{
+        width:100%;
+    }
+
+    .flex-butoes{
+        width: 40%;
+    }
+
+    .flex-tabela-butao{
+        margin-right: 20em;
+    }
+    .input-enviar{
+        margin: 1em 0;
+    }
+
+    .flex-adicionar{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        gap: 5px;
+    }
+
+    .jumbotron{
+        flex-direction: column;
+    }
+
+    .input-text{
+        width: 39%;
+        margin: 0;
+    }
+    .teste{
+        display: flex;
+        margin-left: -100px;
+    }
+
+    table, thead, tbody, th, td, tr {
+	    display: block;
+	    padding: 0;
+	}
+
+    thead tr {
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+
+
+    tr, .tr {
+      margin: 0 0 1rem 0;
+    }
+
+    td, .td {
+			/* Behave  like a "row" */
+	border: none;
+	border-bottom: 1px solid #eee;
+	position: relative;
+	padding-left: 50%;
+	}
+
+	td:before, .td:before {
+	position: absolute;
+	top: 0;
+	left: 6px;
+	width: 45%;
+	padding-right: 10px;
+	white-space: nowrap;
+	}
+
+
+    .tabela{
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: JUSTIFY;
+        width: 95%;
+        padding-right: 5px;
+        margin: 0 auto;
+    }
+    td:nth-of-type(1):before,td:nth-of-type(2):before,td:nth-of-type(3):before,td:nth-of-type(4):before,td:nth-of-type(5):before,td:nth-of-type(6):before,td:nth-of-type(7):before{
+        font-weight: 700;
+    }
+
+    td:nth-of-type(1):before { content: "CLIENTE"; }
+	td:nth-of-type(2):before { content: "IMPRESSÃO"; }
+	td:nth-of-type(3):before { content: "DESCRIÇÃO"; }
+	td:nth-of-type(4):before { content: "CUSTO"; }
+	td:nth-of-type(5):before { content: "VALOR"; }
+	td:nth-of-type(6):before { content: "DATA"; }
+	td:nth-of-type(7):before { content: "FILAMENTO"; }
+	}
+
+	td, .td{
+	    width: auto;
+	}
+
+}
+

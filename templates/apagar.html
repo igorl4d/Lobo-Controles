@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>APAGAR</title>
+    </head>
+    <body>
+        <div class = 'jumbotron' style = 'background-color: red;'>
+            <h1>APAGAR</h1>
+        </div>
+        <div class = 'container tabela'>
+                <h2> Atenção </h2>
+                <p> Deseja apagar as seguintes informações?</p>
+                <table border = '2' class = 'tabela' >
+                    <thead>
+                        <tr class = 'tr'>
+                            <th>Cliente</th>
+                            <th>Impressao</th>
+                            <th>Descricao</th>
+                            <th>Custo</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                            <th>Filamento</th>
+                    </thead>
+                    </tr>
+                    {% for clientes in display %}
+                    <tr class = 'tr'>
+                        <td class = 'cliente td'>{{clientes.nome}}</td>
+                        <td class = 'impressao td'>{{clientes.impressao}}</td>
+                        <td class = 'descricao td'>{{clientes.descricao}}</td>
+                        <td class = 'custo td'>{{clientes.custo}} R$</td>
+                        <td class = 'valor td'>{{clientes.valor}} R$</td>
+                        <td class = 'data td'>{{clientes.data}}</td>
+                        <td class = 'filamento td'>{{clientes.filamento}}</td>
+                        <td>
+                            <div class = 'flex-tabela-butao'>
+                                <form action = '/apagar' method = 'POST'>
+                                    <input type = 'hidden' name = 'id' value = {{clientes.id}}>
+                                    <input type = 'submit' class = 'butao' style = 'padding: 1em'value = 'APAGAR'>
+                                </form>
+                            </div>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </table>
+
+        </div>
+
+            <div class = 'voltar'>
+                <form action = "/" class = ''>
+                    <input type = 'submit' value = 'VOLTAR' class = 'input-enviar' style = 'margin-top:1em;'>
+                </form>
+
+            </div>
+        <footer><script src = 'script.js'></script></footer>
+    </body>

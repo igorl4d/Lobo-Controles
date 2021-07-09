@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LOBO</title>
+    </head>
+    <body id = 'teste'>
+        <div class="jumbotron">
+            <img src = '/static/lobo3d.png' class = 'imagem-header'>
+            <h1>Lobo Controles</h1>
+        </div>
+        <div class="container">
+            <h2>Adicionar informações</h2>
+                <form method = 'post' class = 'section column'>
+                    <div class = 'flex-adicionar'>
+                        <input type = 'text' name = 'cliente' autofocus autocomplete = 'off' placeholder = 'Cliente' class = 'input-text '>
+                        <input type = 'text' name = 'impressao'  autocomplete = 'off' placeholder = 'Impressao' class = 'input-text '>
+                        <input type = 'text' name = 'descricao'  autocomplete = 'off' placeholder = 'Descricao' class = 'input-text '>
+                        <input type = 'number' name = 'custo' autocomplete = 'off' placeholder = 'Custo' class = 'input-text ' step = '0.01'>
+                        <input type = 'number' name = 'valor' autocomplete = 'off' placeholder = 'Valor' class = 'input-text ' step = '0.01'>
+                        <input type = 'date' name = 'data' autocomplete = 'off' placeholder = 'Data' class = 'input-text '>
+                        <input type = 'text' name = 'filamento' autofocus autocomplete = 'off' placeholder = 'Filamento' class = 'input-text'>
+                    </div>
+                    <input type = 'submit' value = 'Salvar' class = 'input-enviar' style = 'width: 20%;'>
+                </form>
+
+            </div>
+
+            <div class = 'container tabela'>
+                <table border = '2' class = 'tabela' >
+                    <thead>
+                        <tr class = 'tr'>
+                            <th>Cliente</th>
+                            <th>Impressao</th>
+                            <th>Descricao</th>
+                            <th>Custo</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                            <th>Filamento</th>
+                    </thead>
+                    </tr>
+                    {% for clientes in display %}
+                    <tr class = 'tr'>
+                        <td class = 'cliente td'>{{clientes.nome}}</td>
+                        <td class = 'impressao td'>{{clientes.impressao}}</td>
+                        <td class = 'descricao td'>{{clientes.descricao}}</td>
+                        <td class = 'custo td'>{{clientes.custo}} R$</td>
+                        <td class = 'valor td'>{{clientes.valor}} R$</td>
+                        <td class = 'data td'>{{clientes.data}}</td>
+                        <td class = 'filamento td'>{{clientes.filamento}}</td>
+                        <td class = 'tdbutao'>
+                            <div class = 'flex-tabela-butao'>
+                                <form action = '/redirect_apagar' method = 'POST' class = 'butao-tabela' >
+                                    <input type = 'hidden' value = {{clientes.id}} name = 'apagar'>
+                                    <input type = 'submit' class = 'butao' value = 'APAGAR'>
+                                </form>
+
+                                <form action = '/redirect_editar' method = 'POST' class = 'butao-tabela'>
+                                    <input type = 'hidden' value = {{clientes.id}} name = 'editar'>
+                                    <input type = 'submit' value = 'EDITAR' class = 'butao' style = 'background-color: #F2EB0C'>
+                                </form>
+                            </div>
+                        </td>
+
+                        {% endfor %}
+                    </tr>
+                </table>
+
+
+                </div>
+
+            </div>
+
+
+    </body>
+    <footer><script type=text/javascript src="{{ url_for('static', filename='main.js')}}"></script>
+</footer>
+</html>

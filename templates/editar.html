@@ -1,0 +1,60 @@
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>EDITAR</title>
+    </head>
+    <body>
+        <div class="jumbotron" style = 'background-color:yellow; color:black;'>
+            <h1>EDITAR</h1>
+        </div>
+            {% for clientes in display %}
+            <div class = 'container'>
+            <h2>Adicionar informacao</h2>
+                <form  action = "/editar" class = 'section column' method = "POST">
+                    <div class = 'flex-adicionar'>
+                        <input type = 'text' name = 'cliente' autofocus autocomplete = 'off' placeholder = "{{clientes.nome}}"  value = "{{clientes.nome}}" class = 'input-text '>
+                        <input type = 'text' name = 'impressao'  autocomplete = 'off' placeholder = 'Impressao' class = 'input-text 'placeholder = "{{clientes.impressao}}" value = "{{clientes.impressao}}">
+                        <input type = 'text' name = 'descricao'  autocomplete = 'off' placeholder = 'Descricao' class = 'input-text 'placeholder = "{{clientes.descricao}}" value = "{{clientes.descricao}}">
+                        <input type = 'number' name = 'custo' autocomplete = 'off' placeholder = 'Custo' class = 'input-text ' placeholder = {{clientes.custo}} value = "{{clientes.custo}}" step = '0.01'>
+                        <input type = 'number' name = 'valor' autocomplete = 'off' placeholder = 'Valor' class = 'input-text 'placeholder = {{clientes.valor}} value = "{{clientes.valor}}" step = '0.01'>
+                        <input type = 'date' name = 'data' autocomplete = 'off' placeholder = 'Data' class = 'input-text 'placeholder = "{{clientes.data}}" value = "{{clientes.data}}">
+                        <input type = 'text' name = 'filamento' autofocus autocomplete = 'off' placeholder = 'Filamento' class = 'input-text' placeholder = {"{clientes.filamento}}" value = "{{clientes.filamento}}">
+                        <input type = "hidden" name = "id" value = {{clientes.id}}>
+                    </div>
+                    <input type = 'submit' value = 'Salvar' class = 'input-enviar'>
+                </form>
+            <div class = 'container tabela'>
+                <table border = '2' class = 'tabela' >
+                    <thead>
+                        <tr class = 'tr'>
+                            <th>Cliente</th>
+                            <th>Impressao</th>
+                            <th>Descricao</th>
+                            <th>Custo</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                            <th>Filamento</th>
+                    </thead>
+                    </tr>
+                    <tr class = 'tr'>
+                        <td class = 'cliente td'>{{clientes.nome}}</td>
+                        <td class = 'impressao td'>{{clientes.impressao}}</td>
+                        <td class = 'descricao td'>{{clientes.descricao}}</td>
+                        <td class = 'custo td'>{{clientes.custo}} R$</td>
+                        <td class = 'valor td'>{{clientes.valor}} R$</td>
+                        <td class = 'data td'>{{clientes.data}}</td>
+                        <td class = 'filamento td'>{{clientes.filamento}}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+                </div>
+                </div>
+                <div class = 'voltar'>
+                    <form action = "/" class = ''>
+                        <input type = 'submit' value = 'VOLTAR' class = 'input-enviar' style = 'margin-top:1em'>
+                    </form>
+                </div>
+    </body>
